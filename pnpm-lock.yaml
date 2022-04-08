@@ -2,6 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@iconify-json/bi': ^1.1.1
+  '@iconify-json/ion': ^1.1.1
   '@iconify-json/mdi': ^1.1.9
   '@types/node': ^17.0.23
   '@vitejs/plugin-vue': ^2.3.0
@@ -12,7 +13,7 @@ specifiers:
   vite: ^2.9.0
   vite-plugin-windicss: ^1.8.3
   vue: ^3.2.25
-  vue-openweather: ^0.0.7
+  vue-openweather: ^0.0.8
   vue-tsc: ^0.29.8
   windicss: ^3.5.1
 
@@ -21,6 +22,7 @@ dependencies:
 
 devDependencies:
   '@iconify-json/bi': 1.1.1
+  '@iconify-json/ion': 1.1.1
   '@iconify-json/mdi': 1.1.9
   '@types/node': 17.0.23
   '@vitejs/plugin-vue': 2.3.1_vite@2.9.1+vue@3.2.31
@@ -30,7 +32,7 @@ devDependencies:
   unplugin-vue-components: 0.18.5_vite@2.9.1+vue@3.2.31
   vite: 2.9.1
   vite-plugin-windicss: 1.8.3_vite@2.9.1
-  vue-openweather: 0.0.7
+  vue-openweather: 0.0.8
   vue-tsc: 0.29.8_typescript@4.6.3
   windicss: 3.5.1
 
@@ -83,6 +85,12 @@ packages:
 
   /@iconify-json/bi/1.1.1:
     resolution: {integrity: sha512-E3ICleoVJtA8Ou4oVJoZNja+pK5QDaj120n4gh0Xf0XFeZZLnz5JsjSG2x5ro0tYZL6q54P+Ct7uy9NWJX/JMA==}
+    dependencies:
+      '@iconify/types': 1.1.0
+    dev: true
+
+  /@iconify-json/ion/1.1.1:
+    resolution: {integrity: sha512-j8103Br7nwQfLgknJUqwfD8JMOf2XA006cvstHFeSyfgqf7asThh4xOr1kH2aB7Llx7EF3g6odb9JxsOoyNKnQ==}
     dependencies:
       '@iconify/types': 1.1.0
     dev: true
@@ -1496,8 +1504,8 @@ packages:
       vscode-typescript-languageservice: 0.29.8
     dev: true
 
-  /vue-openweather/0.0.7:
-    resolution: {integrity: sha512-73XDGKyLtEFfE1jKjp8HEO+1AHMcIS1xrH9g2pSlrcqBc5yY0Agc7uQO3OSwS8rAz5BD9WQ2OM4AgdHJ6LDjpQ==}
+  /vue-openweather/0.0.8:
+    resolution: {integrity: sha512-oLSwAhlblguB2gaFwkrudJ4TVW/liLSDi3BxFYlw2IP1FaOPVih80Yzj1oAGLDlw/kzFiLwk4oPRYTdgNwL8Mg==}
     dependencies:
       vue: 3.2.31
     dev: true
