@@ -100,7 +100,7 @@ watchEffect(async () => {
           {{ condition.clouds }}%
         </p>
         <div class="center">
-          <img draggable="false" :src="`http://openweathermap.org/img/wn/${condition.weather[0].icon}@2x.png`" />
+          <img draggable="false" :src="`https://openweathermap.org/img/wn/${condition.weather[0].icon}@2x.png`" />
         </div>
       </div>
       <div v-else-if="daily && props.daily"
@@ -115,7 +115,7 @@ watchEffect(async () => {
           {{ dailyCond.clouds }}%
         </p>
         <div class="center">
-          <img draggable="false" :src="`http://openweathermap.org/img/wn/${dailyCond.weather[0].icon}@2x.png`" />
+          <img draggable="false" :src="`https://openweathermap.org/img/wn/${dailyCond.weather[0].icon}@2x.png`" />
         </div>
       </div>
     </div>
