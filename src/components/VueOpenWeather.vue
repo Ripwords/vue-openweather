@@ -44,11 +44,11 @@ watchEffect(async () => {
     <div 
       v-else 
       ref="horScrollbar" 
-      class="flex overflow-x-scroll" 
+      class="flex overflow-x-scroll scrollbar scrollbar-thumb-rounded scrollbar-thumb-[#000] scrollbar-track-gray-100" 
       @wheel="scrollHorizontally"
     >
       <div 
-        class="min-w-[150px] m-2 p-2 dark:bg-[#333] dark:color-[#fff] rounded-[5px] shadow-dark-900 scrollbar scrollbar-thumb-rounded scrollbar-thumb-gray-900 scrollbar-track-gray-100"
+        class="min-w-[150px] m-2 p-2 dark:bg-[rgba(99,99,99,0.8)] dark:text-[#fff] rounded-[5px] shadow-md shadow-gray-500"
         v-for="condition in weather.hourly" :key="weather.hourly.dt"
       >
         <p class="mt-1" align="center">

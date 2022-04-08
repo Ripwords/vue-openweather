@@ -32,7 +32,7 @@
     "unplugin-vue-components": "^0.18.5",
     "vite": "^2.9.0",
     "vite-plugin-windicss": "^1.8.3",
-    "vue-openweather": "^0.0.6",
+    "vue-openweather": "^0.0.7",
     "vue-tsc": "^0.29.8",
     "windicss": "^3.5.1"
   }

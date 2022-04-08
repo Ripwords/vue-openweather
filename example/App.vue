@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { VueOpenWeather } from 'vue-openweather'
+// import { VueOpenWeather } from 'vue-openweather'
+import VueOpenWeather from '../src/components/VueOpenWeather.vue';
 </script>
 
 <template>

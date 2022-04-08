@@ -12,7 +12,7 @@ specifiers:
   vite: ^2.9.0
   vite-plugin-windicss: ^1.8.3
   vue: ^3.2.25
-  vue-openweather: ^0.0.6
+  vue-openweather: ^0.0.7
   vue-tsc: ^0.29.8
   windicss: ^3.5.1
 
@@ -30,7 +30,7 @@ devDependencies:
   unplugin-vue-components: 0.18.5_vite@2.9.1+vue@3.2.31
   vite: 2.9.1
   vite-plugin-windicss: 1.8.3_vite@2.9.1
-  vue-openweather: 0.0.6
+  vue-openweather: 0.0.7
   vue-tsc: 0.29.8_typescript@4.6.3
   windicss: 3.5.1
 
@@ -1496,8 +1496,8 @@ packages:
       vscode-typescript-languageservice: 0.29.8
     dev: true
 
-  /vue-openweather/0.0.6:
-    resolution: {integrity: sha512-s9cKVL1zY4pEzRsUC+2QqA3wabaAbvRfqwB8gr0AH9apXZFfju483+5UcG9V9uGvvLYEX60wNTzZwqDV820XRQ==}
+  /vue-openweather/0.0.7:
+    resolution: {integrity: sha512-73XDGKyLtEFfE1jKjp8HEO+1AHMcIS1xrH9g2pSlrcqBc5yY0Agc7uQO3OSwS8rAz5BD9WQ2OM4AgdHJ6LDjpQ==}
     dependencies:
       vue: 3.2.31
     dev: true
