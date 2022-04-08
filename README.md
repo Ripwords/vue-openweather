@@ -1,5 +1,12 @@
 # Vue 3 + OpenWeather
-<img src="image/README/1649435949695.png">
+
+[![vue3](https://img.shields.io/badge/vuejs-3.x-brightgreen.svg)](https://vuejs.org/)
+[![npm](https://img.shields.io/npm/v/vue-openweather)](http://npmjs.com/package/vue-openweather)
+[![npm download per month](https://img.shields.io/npm/dm/vue-openweather)](http://npmjs.com/package/vue-openweather)
+
+<img src="https://user-images.githubusercontent.com/58784686/162488946-1d0f1ffc-633f-45c4-8fdd-f64b6e46919d.png">
+
+Inspired by [vue-weather-widget](https://github.com/dipu-bd/vue-weather-widget)
 
 ## Install
 
@@ -42,3 +49,5 @@ Get an OpenWeatherAPI key by signing up an account at the OpenWeather website
 | hourly      | boolean            | false            | Hourly data for 48 hours   |
 | daily       | boolean            | daily            | Daily data for 3 days      |
 | units       | string             | metric           | Metric or Imperial units   |
+
+
