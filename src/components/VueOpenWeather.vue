@@ -73,52 +73,52 @@ watchEffect(async () => {
 </script>
 
 <template>
-  <div class="component select-none font-semibold">
+  <div class="component">
     <div v-if="props.dashboard">
     
     </div>
     <div v-else>
       <div v-if="hourly && props.hourly"
         ref="horScrollbar" 
-        class="flex overflow-x-scroll no-scrollbar" 
+        class="horizontal" 
         @wheel="scrollHorizontally"
       >
         <div 
-          class="min-w-[150px] m-2 p-2 rounded-[15px] shadow-md shadow-gray-500"
+          class="card"
           v-for="condition in hourly" :key="condition"
         >
-        <p class="mt-1" align="center">
+          <p style="margin-top: 0.25rem;" align="center">
             {{ utcToDate(new Date((condition.dt) * 1000)) }}
           </p>
-          <p class="mt-1" align="center">
+          <p style="margin-top: 0.25rem;" align="center">
             {{ utcToTime(new Date((condition.dt) * 1000)) }}
           </p>
-          <p align="center" class="mt-3">
-            <i-mdi:cloud-outline />
+          <p align="center" style="margin-top: 0.75rem;">
+            <svg width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M19 18H6a4 4 0 0 1-4-4a4 4 0 0 1 4-4h.71C7.37 7.69 9.5 6 12 6a5.5 5.5 0 0 1 5.5 5.5v.5H19a3 3 0 0 1 3 3a3 3 0 0 1-3 3m.35-7.97A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.03A6.004 6.004 0 0 0 0 14a6 6 0 0 0 6 6h13a5 5 0 0 0 5-5c0-2.64-2.05-4.78-4.65-4.97Z"></path></svg>
             {{ condition.clouds }}%
           </p>
-          <div class="flex justify-center">
+          <div class="center">
             <img draggable="false" :src="`http://openweathermap.org/img/wn/${condition.weather[0].icon}@2x.png`" />
           </div>
         </div>
       </div>
       <div v-else-if="daily && props.daily"
         ref="horScrollbar" 
-        class="flex overflow-x-scroll no-scrollbar" 
+        class="horizontal" 
         @wheel="scrollHorizontally"
       >
         <div 
-          class="min-w-[150px] m-2 p-2 rounded-[15px] shadow-md shadow-gray-500"
+          class="card"
           v-for="condition in daily" :key="condition"
         >
-          <p class="mt-1" align="center">
+          <p style="margin-top: 0.25rem;" align="center">
             {{ utcToDate(new Date(condition.dt * 1000)) }}
           </p>
-          <p align="center" class="mt-3">
-            <i-mdi:cloud-outline />
+          <p align="center" style="margin-top: 0.75rem;">
+            <svg width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M19 18H6a4 4 0 0 1-4-4a4 4 0 0 1 4-4h.71C7.37 7.69 9.5 6 12 6a5.5 5.5 0 0 1 5.5 5.5v.5H19a3 3 0 0 1 3 3a3 3 0 0 1-3 3m.35-7.97A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.03A6.004 6.004 0 0 0 0 14a6 6 0 0 0 6 6h13a5 5 0 0 0 5-5c0-2.64-2.05-4.78-4.65-4.97Z"></path></svg>
             {{ condition.clouds }}%
           </p>
-          <div class="flex justify-center">
+          <div class="center">
             <img draggable="false" :src="`http://openweathermap.org/img/wn/${condition.weather[0].icon}@2x.png`" />
           </div>
         </div>
@@ -126,3 +126,33 @@ watchEffect(async () => {
     </div>
   </div>
 </template>
+
+<style scoped>
+.center {
+  display: flex;
+  justify-content: center;
+}
+.component {
+  user-select: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.horizontal {
+  display: flex;
+  overflow-x: scroll;
+}
+
+.horizontal::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  min-width: 150px;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+</style>
