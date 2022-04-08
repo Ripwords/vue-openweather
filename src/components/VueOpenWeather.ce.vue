@@ -66,7 +66,7 @@ watchEffect(async () => {
   </div>
 </template>
 
-<style scoped>
+<style>
 .component ::-webkit-scrollbar {
   width: 20px;
 }
