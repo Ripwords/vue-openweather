@@ -6,7 +6,8 @@ import VueOpenWeather from '../src/components/VueOpenWeather.vue';
 <template>
   <VueOpenWeather
     apiKey="fcd7c46a039d1f8d59ef5c1ed18f9c6d"
-    lat="-3.22"
-    long="101.65"
+    lat="3.22"
+    long="101.44"
+    hourly
   />
 </template>
