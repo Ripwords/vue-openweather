@@ -11,13 +11,13 @@ specifiers:
   vite: ^2.9.0
   vite-plugin-windicss: ^1.8.3
   vue: ^3.2.25
-  vue-openweather: ^0.0.1
+  vue-openweather: ^0.0.4
   vue-tsc: ^0.29.8
   windicss: ^3.5.1
 
 dependencies:
   vue: 3.2.31
-  vue-openweather: 0.0.1
+  vue-openweather: 0.0.4
 
 devDependencies:
   '@iconify-json/bi': 1.1.1
@@ -1501,6 +1501,13 @@ packages:
     resolution: {integrity: sha512-sFIPXD5hjT/3DdFvDlthj4xBngB71K+6Cc9UlhWifP95hvsYds1gBSvJsYzfNcczbmO/rVmqEg5xPOahFDg7Bw==}
     dependencies:
       vue: 3.2.31
+    dev: false
+
+  /vue-openweather/0.0.4:
+    resolution: {integrity: sha512-3Vxr/jRJm0UtLAeRK/eM3stfYIutVT1S+HstpqwV6O8J2tChP8HvU1lCT0dnznmPgBTlUU6bpfzas8G8EBWR2Q==}
+    dependencies:
+      vue: 3.2.31
+      vue-openweather: 0.0.1
     dev: false
 
   /vue-tsc/0.29.8_typescript@4.6.3:

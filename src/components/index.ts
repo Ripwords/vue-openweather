@@ -1,2 +1,2 @@
-export { default as VueOpenWeather } from './VueOpenWeather.vue'
+export { default as VueOpenWeather } from './VueOpenWeather.ce.vue'
 import 'virtual:windi.css'

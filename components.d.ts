@@ -5,7 +5,7 @@
 declare module 'vue' {
   export interface GlobalComponents {
     'IMdi:cloudOutline': typeof import('~icons/mdi/cloud-outline')['default']
-    VueOpenWeather: typeof import('./src/components/VueOpenWeather.vue')['default']
+    'VueOpenWeather.ce': typeof import('./src/components/VueOpenWeather.ce.vue')['default']
   }
 }
 

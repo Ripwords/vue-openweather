@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// import VueOpenWeather from '../src/components/VueOpenWeather.vue'
 import { VueOpenWeather } from 'vue-openweather'
 </script>
 

@@ -1,6 +1,6 @@
 {
   "name": "vue-openweather",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "files": [
     "dist"
   ],
@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "vue": "^3.2.25",
-    "vue-openweather": "^0.0.1"
+    "vue-openweather": "^0.0.4"
   },
   "devDependencies": {
     "@iconify-json/bi": "^1.1.1",
