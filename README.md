@@ -16,9 +16,9 @@ Get an OpenWeatherAPI key by signing up an account at the OpenWeather website
 ## Usage
 ```html
 <script setup lang="ts">
-  import { VueOpenWeather } from "vue-openweather"
-  import "vue-openweather/dist/style.css"
-<script>
+  import VueOpenWeather from "vue-openweather";
+  import "vue-openweather/dist/style.css";
+</script>
 
 <template>
   <VueOpenWeather 
@@ -28,6 +28,8 @@ Get an OpenWeatherAPI key by signing up an account at the OpenWeather website
     hourly
   />
 </template>
+
+
 ```
 
 ## Props
