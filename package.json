@@ -1,9 +1,12 @@
 {
   "name": "vue-openweather",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": "Ripwords",
   "description": "A VueJS weather component using the OpenWeatherMap API",
-  "repository": "https://github.com/Ripwords/vue-openweather",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ripwords/vue-openweather.git"
+  },
   "files": [
     "dist"
   ],
