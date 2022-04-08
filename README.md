@@ -47,7 +47,7 @@ Get an OpenWeatherAPI key by signing up an account at the OpenWeather website
 | lat         | string (required)  | -                | Your latitude              |
 | long        | string (required)  | -                | Your longitude             |
 | hourly      | boolean            | false            | Hourly data for 48 hours   |
-| daily       | boolean            | daily            | Daily data for 3 days      |
+| daily       | boolean            | true             | Daily data for 3 days      |
 | units       | string             | metric           | Metric or Imperial units   |
 
 
