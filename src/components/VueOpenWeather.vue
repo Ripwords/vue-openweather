@@ -48,7 +48,7 @@ watchEffect(async () => {
       @wheel="scrollHorizontally"
     >
       <div 
-        class="min-w-[150px] m-2 p-2 card" 
+        class="min-w-[150px] m-2 p-2 dark:bg-[#333] dark:color-[#fff] rounded-[5px] shadow-dark-900 scrollbar scrollbar-thumb-rounded scrollbar-thumb-gray-900 scrollbar-track-gray-100"
         v-for="condition in weather.hourly" :key="weather.hourly.dt"
       >
         <p class="mt-1" align="center">
@@ -65,42 +65,3 @@ watchEffect(async () => {
     </div>
   </div>
 </template>
-
-<style>
-.component ::-webkit-scrollbar {
-  width: 20px;
-}
-
-.component ::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-
-.component ::-webkit-scrollbar-thumb {
-  background-color: #d6dee1;
-}
-
-.component ::-webkit-scrollbar-thumb {
-  background-color: #d6dee1;
-  border-radius: 20px;
-}
-
-.component ::-webkit-scrollbar-thumb {
-  background-color: #d6dee1;
-  border-radius: 20px;
-  border: 6px solid transparent;
-  background-clip: content-box;
-}
-
-.component .card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  border-radius: 5px; /* 5px rounded corners */
-}
-
-@media (prefers-color-scheme: dark) {
-  .card {
-    background-color: #333;
-    color: #fff;
-  }
-}
-</style>

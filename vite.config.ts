@@ -24,9 +24,7 @@ export default defineConfig({
     }
   },
   plugins: [
-    vue({
-      customElement: true
-    }),
+    vue(),
     WindiCSS(),
     Icons({
       autoInstall: true
