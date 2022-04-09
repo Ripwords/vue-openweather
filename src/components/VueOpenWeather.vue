@@ -103,24 +103,16 @@ watchEffect(async () => {
   </div>
 </template>
 
-<style scoped>
+<style>
 .center {
   display: flex;
   justify-content: center;
 }
+
 .component {
   user-select: none;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-}
-
-.horizontal {
-  display: flex;
-  overflow-x: scroll;
-}
-
-.horizontal::-webkit-scrollbar {
-  display: none;
 }
 
 .card {
@@ -128,7 +120,18 @@ watchEffect(async () => {
   margin: 0.5rem;
   padding: 0.5rem;
   border-radius: 15px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 5px 4px 9px 3px rgba(0,0,0,0.2);
   transition: 0.3s;
+}
+</style>
+
+<style scoped>
+.horizontal {
+  display: flex;
+  overflow-x: scroll;
+}
+
+.horizontal::-webkit-scrollbar {
+  display: none;
 }
 </style>
