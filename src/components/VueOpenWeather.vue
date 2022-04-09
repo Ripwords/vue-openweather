@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { ref, watchEffect } from 'vue'
+import { utcToDate, utcToTime } from './utils'
 const props = defineProps({
   "apiKey": String,
   "lat": String,
@@ -15,8 +16,13 @@ const props = defineProps({
   "units": {
     type: String,
     default: 'metric' // metric, imperial
+  },
+  "excludes": {
+    type: Array,
+    default: ['minutely', 'alerts', 'current']
   }
 })
+const emits = defineEmits(["weatherData"])
 
 // Horizontal Scrollbar
 const horScrollbar = ref<any>()
@@ -30,48 +36,23 @@ const scrollHorizontally = (event: any) => {
   }
 }
 
-// Function to account for different Time Zone based on offset
-const convertTimeZone = (time: number, offset: number) => {
-  const date = new Date((time + offset) * 1000)
-  const utc = date.getTime() + (date.getTimezoneOffset() * 60000)
-  const nd = new Date(utc + (3600000*offset))
-  return nd
-}
-
-// Function to convert UTC string to date with day of week
-const utcToDate = (time: number, offset: number) => {
-  const date = convertTimeZone(time, offset)
-  const day = date.toLocaleString('default', { weekday: 'long' })
-  const month = date.toLocaleString('default', { month: 'long' })
-  const dayOfMonth = date.getDate()
-  return `${day}, ${dayOfMonth} ${month}`
-}
-
-// Function to convert UTC to time in 12 hour format
-const utcToTime = (time: number, offset: number) => {
-  const date = convertTimeZone(time, offset)
-  const hours = date.getHours()
-  const minutes = date.getMinutes()
-  const ampm = hours >= 12 ? 'pm' : 'am'
-  const hour = hours % 12
-  const formattedHour = hour < 10 ? `0${hour}` : hour
-  const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes
-  return `${formattedHour}:${formattedMinutes} ${ampm}`
-}
-
 // Weather Data
+const excludeString = (excludes: any[]) => {
+  return excludes.join(',')
+}
 const apiLink = ref('')
 const weather = ref<any>('')
 const hourly = ref<any>()
 const daily = ref<any>()
 watchEffect(async () => {
-  apiLink.value = `https://api.openweathermap.org/data/2.5/onecall?lat=${props.lat}&lon=${props.long}&appid=${props.apiKey}&units=${props.units}&exclude=minutely,alerts,current`
+  apiLink.value = `https://api.openweathermap.org/data/2.5/onecall?lat=${props.lat}&lon=${props.long}&appid=${props.apiKey}&units=${props.units}&exclude=${excludeString(props.excludes)}`
+  console.log(apiLink.value)
   try {
     const weatherData = await fetch(apiLink.value)
     weather.value = await weatherData.json()
     hourly.value = weather.value.hourly
     daily.value = weather.value.daily
-    console.log(weather.value)
+    emits("weatherData", [weather.value])
   } catch (error) {
     console.log(error)
   }
