@@ -27,3 +27,26 @@ export const utcToTime = (time: number, offset: number) => {
   const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes
   return `${formattedHour}:${formattedMinutes} ${ampm}`
 }
+
+export const excludeString = (excludes: any[]) => {
+  return excludes.join(',')
+}
+
+// Function that returns OpenWeatherAPI call
+export const getWeather = async (
+  apiKey: string,
+  lat: string,
+  lon: string,
+  units = "metric",
+  excludes = ["minutely", "alerts"]
+) => {
+  let data
+  try {
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}&exclude=${excludeString(excludes)}`)
+    data = await response.json()
+  } catch (error) {
+    console.log(error)
+    data = {}
+  }
+  return data
+}

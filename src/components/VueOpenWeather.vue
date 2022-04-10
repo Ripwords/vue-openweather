@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref, watchEffect } from 'vue'
-import { utcToDate, utcToTime } from './utils'
+import { utcToDate, utcToTime, excludeString } from './utils'
 const props = defineProps({
   "apiKey": String,
   "lat": String,
@@ -37,9 +37,6 @@ const scrollHorizontally = (event: any) => {
 }
 
 // Weather Data
-const excludeString = (excludes: any[]) => {
-  return excludes.join(',')
-}
 const apiLink = ref('')
 const weather = ref<any>('')
 const hourly = ref<any>()
