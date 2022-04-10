@@ -1,6 +1,6 @@
 {
   "name": "vue-openweather",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "author": "Ripwords",
   "description": "A VueJS weather component using the OpenWeatherMap API",
   "repository": {
@@ -33,7 +33,7 @@
     "@vitejs/plugin-vue": "^2.3.0",
     "typescript": "^4.5.4",
     "vite": "^2.9.0",
-    "vue-openweather": "^0.1.0",
+    "vue-openweather": "^0.2.9",
     "vue-tsc": "^0.29.8"
   }
 }

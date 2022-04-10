@@ -3,7 +3,7 @@ import { utcToTime, utcToDate, convertTimeZone, getWeather } from './utils'
 import VueOpenWeather from './VueOpenWeather.vue'
 import VueCurrentWeather from './VueCurrentWeather.vue'
 
-export default {
+export const OpenWeather = {
   install: (app: App) => {
     app.component('VueOpenWeather', VueOpenWeather)
     app.component('VueCurrentWeather', VueCurrentWeather)

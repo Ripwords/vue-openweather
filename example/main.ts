@@ -1,5 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import VueOpenWeather from '../src/components/index'
+// import VueOpenWeather from '../src/components/index'
+import { OpenWeather } from 'vue-openweather'
+import "vue-openweather/style.css"
 
-createApp(App).use(VueOpenWeather).mount('#app')
+createApp(App).use(OpenWeather).mount('#app')

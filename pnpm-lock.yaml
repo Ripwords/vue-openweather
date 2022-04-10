@@ -6,7 +6,7 @@ specifiers:
   typescript: ^4.5.4
   vite: ^2.9.0
   vue: ^3.2.25
-  vue-openweather: ^0.1.0
+  vue-openweather: ^0.2.8
   vue-tsc: ^0.29.8
 
 dependencies:
@@ -17,7 +17,7 @@ devDependencies:
   '@vitejs/plugin-vue': 2.3.1_vite@2.9.1+vue@3.2.31
   typescript: 4.6.3
   vite: 2.9.1
-  vue-openweather: 0.1.0
+  vue-openweather: 0.2.8
   vue-tsc: 0.29.8_typescript@4.6.3
 
 packages:
@@ -940,8 +940,8 @@ packages:
       vscode-typescript-languageservice: 0.29.8
     dev: true
 
-  /vue-openweather/0.1.0:
-    resolution: {integrity: sha512-Q24nidRu4LpwOADQGGkS+zvZ0KrAAGdzZXwNrna567xKPkcFaJGlJfals7EnYOFXOt7ley1g+IGahk4Cfmb7Cw==}
+  /vue-openweather/0.2.8:
+    resolution: {integrity: sha512-OI+BCVFkOBvcwFipWsMTwk76ErHMSsySVuf5aPLNm+L4ISEghGdE1uGYObs9iB9yWBVZws9FpickVRtW4sbowg==}
     dependencies:
       vue: 3.2.31
     dev: true
