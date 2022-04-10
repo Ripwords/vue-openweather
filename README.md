@@ -25,7 +25,7 @@ Get an OpenWeatherAPI key by signing up an account at the OpenWeather website
 <script setup lang="ts">
   import { ref } from 'vue'
   import { VueOpenWeather, convertTimeZone, utcToDate, utcToTime } from "vue-openweather";
-  import "vue-openweather/dist/style.css";
+  import "vue-openweather/style.css";
 
   const weatherData = ref<any>('')
   const updateWeatherData = (event: any) => weatherData.value = event[0]

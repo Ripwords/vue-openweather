@@ -43,7 +43,6 @@ const hourly = ref<any>()
 const daily = ref<any>()
 watchEffect(async () => {
   apiLink.value = `https://api.openweathermap.org/data/2.5/onecall?lat=${props.lat}&lon=${props.long}&appid=${props.apiKey}&units=${props.units}&exclude=${excludeString(props.excludes)}`
-  console.log(apiLink.value)
   try {
     const weatherData = await fetch(apiLink.value)
     weather.value = await weatherData.json()
