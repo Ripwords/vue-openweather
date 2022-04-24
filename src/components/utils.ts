@@ -3,7 +3,7 @@
 export const convertTimeZone = (time: number, offset: number) => {
   const date = new Date((time + offset) * 1000)
   const utc = date.getTime() + (date.getTimezoneOffset() * 60000)
-  const nd = new Date(utc + (3600000 * offset))
+  const nd = new Date(utc)
   return nd
 }
 

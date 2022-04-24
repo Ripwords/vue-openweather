@@ -11,6 +11,7 @@ const props = defineProps({
   }
 })
 const emits = defineEmits(["currentWeather"])
+const update = ref(true)
 
 // Function that converts angle to N/S/E/W/NE/NW/SE/SW
 const convertDirection = (angle: number) => {
@@ -38,67 +39,89 @@ const weather = ref<any>()
 const currentWeather = ref<any>()
 watchEffect(async () => {
   try {
+    console.log(update.value)
     const weatherData = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${props.lat}&lon=${props.long}&appid=${props.apiKey}&units=${props.units}&exclude=minutely,alerts,hourly,daily`)
     weather.value = await weatherData.json()
     currentWeather.value = weather.value.current
+    utcToDate(currentWeather.value.dt, weather.value.timezone_offset)
     emits("currentWeather", [weather.value])
   } catch (error) {
     console.log(error)
   }
 })
+
+// set update interval to update every minute minus the current seconds elapsed
+setInterval(() => {
+  update.value = !update.value
+}, (120 - new Date().getSeconds()) * 1000)
 </script>
 
 <template>
-  <div class="component card" v-if="currentWeather">
+  <div class="component card" style="padding-left: 15px; padding-bottom: 20px;" v-if="currentWeather">
     <h1>
       {{ utcToDate(currentWeather.dt, weather.timezone_offset) }}, 
       {{ utcToTime(currentWeather.dt, weather.timezone_offset) }}
     </h1>
-    <div>
-      Cloud Cover
-      {{ currentWeather.clouds }}%
-    </div>
-    <div>
-      Humidity
-      {{ currentWeather.humidity }}%
-    </div>
-    <div>
-      {{ currentWeather.pressure }}hPa
-    </div>
-    <div>
-      Current Temperature
-      {{ currentWeather.temp }}°C
-    </div>
-    <div>
-      Feels Like
-      {{ currentWeather.feels_like }}°C
-    </div>
-    <div>
-      Dew Point
-      {{ currentWeather.dew_point }}°C
-    </div>
-    <div>
-      {{ currentWeather.wind_speed }}m/s
-      {{ convertDirection(currentWeather.wind_deg) }}
-    </div>
-    <div>
+    <div style="display: flex;">
       {{ currentWeather.weather[0].description }}
       <img draggable="false" :src="`https://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png`" />
     </div>
-    <div>
-      {{ (currentWeather.visibility / 1000).toFixed(2) }}km
-    </div>
-    <div>
-      UV Index
-      {{ currentWeather.uvi }}
-    </div>
-    <div>
-      Sunrise
-      {{ utcToTime(currentWeather.sunrise, weather.timezone_offset) }}
-    </div>
-    <div>
-      Sunset
-      {{ utcToTime(currentWeather.sunset, weather.timezone_offset) }}
+    <div class="grid-container">
+      <div>
+        Cloud Cover
+        {{ currentWeather.clouds }}%
+      </div>
+      <div>
+        Humidity
+        {{ currentWeather.humidity }}%
+      </div>
+      <div>
+        Pressure
+        {{ currentWeather.pressure }}hPa
+      </div>
+      <div>
+        Temperature
+        {{ currentWeather.temp }}°C
+      </div>
+      <div>
+        Feels Like
+        {{ currentWeather.feels_like }}°C
+      </div>
+      <div>
+        Dew Point
+        {{ currentWeather.dew_point }}°C
+      </div>
+      <div>
+        {{ currentWeather.wind_speed }}m/s
+        {{ convertDirection(currentWeather.wind_deg) }}
+      </div>
+      
+      <div>
+        Visibility
+        {{ (currentWeather.visibility / 1000).toFixed(2) }}km
+      </div>
+      <div>
+        UV Index
+        {{ currentWeather.uvi }}
+      </div>
+      <div>
+        Sunrise
+        {{ utcToTime(currentWeather.sunrise, weather.timezone_offset) }}
+      </div>
+      <div>
+        Sunset
+        {{ utcToTime(currentWeather.sunset, weather.timezone_offset) }}
+      </div>
     </div>
   </div>
 </template>
+
+<style scoped>
+.grid-container {
+  display: grid;
+  max-width: 600px;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  padding: 10px;
+}
+</style>

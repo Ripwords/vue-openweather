@@ -24,18 +24,6 @@ const props = defineProps({
 })
 const emits = defineEmits(["weatherData"])
 
-// Horizontal Scrollbar
-const horScrollbar = ref<any>()
-const scrollHorizontally = (event: any) => {
-  const scrollAmount = 50
-  event.preventDefault()
-  if (horScrollbar.value) {
-    horScrollbar.value.scrollBy({
-      left: event.deltaY < 0 ? -1*scrollAmount : scrollAmount,
-    })
-  }
-}
-
 // Weather Data
 const apiLink = ref('')
 const weather = ref<any>('')
@@ -58,9 +46,7 @@ watchEffect(async () => {
 <template>
   <div class="component">
     <div
-      ref="horScrollbar" 
       class="horizontal" 
-      @wheel="scrollHorizontally"
     >
       <div v-if="hourly && props.hourly"
         class="card"

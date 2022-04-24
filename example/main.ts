@@ -4,4 +4,5 @@ import App from './App.vue'
 import { OpenWeather } from 'vue-openweather'
 import "vue-openweather/style.css"
 
-createApp(App).use(OpenWeather).mount('#app')
+// createApp(App).use(OpenWeather).mount('#app')
+createApp(App).mount('#app')
