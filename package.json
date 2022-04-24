@@ -1,6 +1,6 @@
 {
   "name": "vue-openweather",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "author": "Ripwords",
   "description": "A VueJS weather component using the OpenWeatherMap API",
   "repository": {
@@ -19,7 +19,7 @@
     },
     "./style.css": "./dist/style.css"
   },
-  "types": "./dist/types/*.d.ts",
+  "types": "./dist/types/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "del src\\components\\*.d.ts && vue-tsc --declaration --emitDeclarationOnly && vite build && mkdir dist\\types && move /y src\\components\\*.d.ts dist\\types\\",
@@ -33,7 +33,7 @@
     "@vitejs/plugin-vue": "^2.3.0",
     "typescript": "^4.5.4",
     "vite": "^2.9.0",
-    "vue-openweather": "^0.2.9",
+    "vue-openweather": "^0.2.10",
     "vue-tsc": "^0.29.8"
   }
 }

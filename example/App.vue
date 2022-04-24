@@ -1,5 +1,6 @@
 <script setup lang="ts">
 // import { VueOpenWeather, VueCurrentWeather, convertTimeZone } from '../src/components/index'
+import { VueOpenWeather, VueCurrentWeather } from 'vue-openweather'
 import { convertTimeZone } from '../src/components/index'
 const output = (e: any) => {
   console.log(e[0].timezone_offset)
