@@ -68,7 +68,7 @@ Get an OpenWeatherAPI key by signing up an account at the OpenWeather website
 ```html
 <script setup lang="ts">
   import VueOpenWeather from "vue-openweather";
-  import "vue-openweather/dist/style.css";
+  import "vue-openweather/style.css";
 
   const logWeatherData = (event: any) => console.log(event)
 </script>
