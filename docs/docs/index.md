@@ -40,6 +40,7 @@ Get an OpenWeatherAPI key by signing up an account at the OpenWeather website
   // and the timezone offset
   // To convert the correct time based on the coordinates, 
   // regardless of the computer's actual timezone
+  
   const getAdjustedTime = () => {
     const time = weatherData.value.hourly[0].dt
     const offset = weatherData.value.timezone_offset
