@@ -16,6 +16,7 @@ import{_ as a,c as n,o as s,a as t}from"./app.1235d59f.js";const g='{"title":"Vu
   <span class="token comment">// and the timezone offset</span>
   <span class="token comment">// To convert the correct time based on the coordinates, </span>
   <span class="token comment">// regardless of the computer&#39;s actual timezone</span>
+  
   <span class="token keyword">const</span> <span class="token function-variable function">getAdjustedTime</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
     <span class="token keyword">const</span> time <span class="token operator">=</span> weatherData<span class="token punctuation">.</span>value<span class="token punctuation">.</span>hourly<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>dt
     <span class="token keyword">const</span> offset <span class="token operator">=</span> weatherData<span class="token punctuation">.</span>value<span class="token punctuation">.</span>timezone_offset
