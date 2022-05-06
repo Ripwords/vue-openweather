@@ -34,7 +34,6 @@ const convertDirection = (angle: number) => {
   }
 }
 
-
 const weather = ref<any>()
 const currentWeather = ref<any>()
 watchEffect(async () => {
@@ -95,7 +94,6 @@ setInterval(() => {
         {{ currentWeather.wind_speed }}m/s
         {{ convertDirection(currentWeather.wind_deg) }}
       </div>
-      
       <div>
         Visibility
         {{ (currentWeather.visibility / 1000).toFixed(2) }}km
