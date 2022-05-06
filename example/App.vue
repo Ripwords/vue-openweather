@@ -10,7 +10,7 @@ const output = (e: any) => {
 const current = (e: any) => console.log(e)
 
 const lat = "48.9"
-const long = "2.35"
+const long = "95"
 </script>
 
 <template>

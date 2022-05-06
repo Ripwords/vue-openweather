@@ -37,7 +37,7 @@ export const utcToTime = (time: number, offset: number) => {
   const hours = date.getHours()
   const minutes = date.getMinutes()
   const ampm = hours >= 12 ? 'pm' : 'am'
-  const hour = hours % 12
+  const hour = (hours == 12) && (ampm == 'pm') ? hours : hours % 12
   const formattedHour = hour < 10 ? `0${hour}` : hour
   const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes
   return `${formattedHour}:${formattedMinutes} ${ampm}`
