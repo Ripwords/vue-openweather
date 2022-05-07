@@ -74,7 +74,7 @@ watchEffect(async () => {
         </Transition>
         <Transition>
           <div class="center" v-show="isLoaded">
-            <img draggable="false" @load="isLoaded = true" :src="`https://openweathermap.org/img/wn/${condition.weather[0].icon}@2x.png`" />
+            <img draggable="false" @load="isLoaded = true" :alt="condition.weather[0]" :src="`https://openweathermap.org/img/wn/${condition.weather[0].icon}@2x.png`" />
           </div>
         </Transition>
       </div>
@@ -100,7 +100,7 @@ watchEffect(async () => {
         </Transition>
         <Transition>
           <div class="center" v-show="isLoaded">
-            <img draggable="false" @load="isLoaded = true" :src="`https://openweathermap.org/img/wn/${dailyCond.weather[0].icon}@2x.png`" />
+            <img draggable="false" @load="isLoaded = true" :alt="dailyCond.weather[0]" :src="`https://openweathermap.org/img/wn/${dailyCond.weather[0].icon}@2x.png`" />
           </div>
         </Transition>
       </div>

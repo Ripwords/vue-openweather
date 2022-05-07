@@ -63,7 +63,7 @@ setInterval(() => {
     </h1>
     <div style="display: flex;">
       {{ currentWeather.weather[0].description }}
-      <img draggable="false" :src="`https://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png`" />
+      <img draggable="false" :alt="currentWeather.weather[0]" :src="`https://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png`" />
     </div>
     <div class="grid-container">
       <div>
